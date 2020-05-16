@@ -4,5 +4,10 @@
         <h1>Hallo python flask!!!</h1>
         <p>selamat datang di website flask pada python, kali ini halaman ini ditulis menggunakan templating</p>
         <p>pada halaman ini ditambahkan nilaiku yaitu : <strong>{{variabelbaru}}</strong></p>
+        <!--menambahkan sintaks jinja2 yang berupa perulangan-->
+        <p>tambahan pada halaman ini adalah terdapat nama-nama hari, yaitu:</p>
+        {% for hariku in variabelhari%}
+            <li>hari {{hariku}}</li>
+        {% endfor %}
     </body>
 </html>
