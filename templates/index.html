@@ -3,11 +3,35 @@
     <body>
         <h1>Hallo python flask!!!</h1>
         <p>selamat datang di website flask pada python, kali ini halaman ini ditulis menggunakan templating</p>
-        <p>pada halaman ini ditambahkan nilaiku yaitu : <strong>{{variabelbaru}}</strong></p>
+        <p>pada halaman ini ditambahkan nilaiku yaitu : <strong>{{var1}}</strong></p>
         <!--menambahkan sintaks jinja2 yang berupa perulangan-->
         <p>tambahan pada halaman ini adalah terdapat nama-nama hari dari parsing python, yaitu:</p>
-        {% for hariku in variabelhari%}
-            <li>hari {{hariku}}</li>
-        {% endfor %}
+        <div>
+            {% for hariku in var2%}
+                <li>hari {{hariku}}</li>
+            {% endfor %}
+        </div>
+        <!--menambahkan sintaks jinja2 yang berupa kondisi-->
+        <p>tambahan halaman ini adalah kondisi jika hari minggu berarti:</p>
+        <div>
+            {%if var3 == "minggu"%}
+            <p>hari libur</p>
+            {%else%}
+            <p>hari kerja</p>
+            {%endif%}
+        </div>
+         <!--menggabungkan sintaks jinja2 yang berupa perulangan dan kondisi-->
+         <p>tambahan halaman ini adalah penggabungan perulangan dan kondisi yaitu bahwa:</p>
+        <div>
+            {% for hariku in var2%}
+                {%if hariku == "minggu"%}
+                    <p>hari <strong>{{hariku}}</strong> adalah juga hari <strong>libur</strong></p>
+                {%elif hariku == "sabtu"%}
+                    <p>hari <strong>{{hariku}}</strong> adalah hari <strong>libur</strong></p>
+                {%else%}
+                    <p>hari <strong>{{hariku}}</strong> adalah hari <strong>kerja</strong></p>
+                {%endif%}
+            {% endfor %}
+        </div>
     </body>
 </html>
